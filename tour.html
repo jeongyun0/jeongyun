@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- 이 줄이 있어야 휴대폰에서도 글자가 작아지지 않고 화면에 맞게 보여요 -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>작은 행복 찾는 골목 여행</title>
+<!-- 기존 홈페이지(index)와 같은 글꼴 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&display=swap">
+<style>
+  /* 색상은 기존 홈페이지와 같은 분홍·남색 계열을 썼어요 */
+  :root {
+    --bg: #FFF5F8;        /* 연분홍 배경 */
+    --card: #FFFFFF;      /* 카드 흰색 */
+    --pink: #F28DB2;      /* 포인트 분홍 */
+    --pink-dark: #C2477A; /* 진한 분홍 (제목, 버튼) */
+    --pink-soft: #FFE8F0; /* 아주 옅은 분홍 */
+    --lavender: #EDE6FC;  /* 옅은 보라 */
+    --text: #1E2547;      /* 본문 글자 (진한 남색) */
+    --text-sub: #4A5072;  /* 보조 글자 */
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Pretendard Variable', Pretendard, system-ui, sans-serif;
+    line-height: 1.6;
+    word-break: keep-all; /* 한글 단어가 중간에서 끊기지 않게 */
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 16px 20px 60px; }
+
+  /* 맨 위 "홈으로" 링크 */
+  .home-link {
+    display: inline-block;
+    color: var(--pink-dark);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 8px 14px;
+    background: var(--card);
+    border-radius: 20px;
+  }
+  .home-link:hover { background: var(--pink-soft); }
+
+  h1, h2 { font-family: Jua, sans-serif; font-weight: 400; }
+  .hero { text-align: center; padding: 40px 0 24px; }
+  .hero h1 { color: var(--pink-dark); font-size: clamp(28px, 7vw, 44px); margin: 0 0 8px; }
+  .hero p { color: var(--text-sub); font-size: 17px; margin: 0; }
+
+  section {
+    background: var(--card);
+    border-radius: 28px;
+    padding: 24px;
+    margin-top: 20px;
+  }
+  h2 { color: var(--pink-dark); font-size: 24px; margin: 0 0 14px; }
+
+  /* "예시" 표시 */
+  .tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--pink-dark);
+    background: var(--pink-soft);
+    border-radius: 10px;
+    padding: 2px 8px;
+    vertical-align: middle;
+  }
+  .note { color: var(--text-sub); font-size: 14px; margin: 0 0 14px; }
+
+  /* 추천 장소: 휴대폰은 한 줄에 1개, PC는 3개 */
+  .places { display: grid; grid-template-columns: 1fr; gap: 12px; }
+  @media (min-width: 640px) { .places { grid-template-columns: repeat(3, 1fr); } }
+  .place { background: var(--lavender); border-radius: 20px; padding: 16px; }
+  .place h3 { margin: 0 0 6px; font-size: 17px; }
+  .place p { margin: 0; color: var(--text-sub); font-size: 15px; }
+
+  /* 일정표와 비용표 */
+  table { width: 100%; border-collapse: collapse; }
+  th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--pink-soft); }
+  th { color: var(--text-sub); font-size: 14px; font-weight: 600; }
+  td:first-child { white-space: nowrap; font-weight: 700; color: var(--pink-dark); }
+  .total td { font-weight: 800; border-bottom: none; }
+
+  /* 문의 버튼 */
+  .contact { text-align: center; }
+  .btn {
+    display: inline-block;
+    background: var(--pink-dark);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 28px;
+    padding: 14px 36px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .btn:hover { background: #E26F9C; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 맨 위: 홈으로 돌아가는 링크 -->
+  <a class="home-link" href="index.html">← 홈으로</a>
+
+  <!-- 제목과 한 줄 소개 -->
+  <header class="hero">
+    <h1>작은 행복 찾는 골목 여행</h1>
+    <p>주말 하루, 가까운 골목을 천천히 걸으며 나만의 작은 행복을 찾아봐요.</p>
+  </header>
+
+  <!-- 추천 장소 3곳 -->
+  <section>
+    <h2>추천 장소 3곳 <span class="tag">예시</span></h2>
+    <p class="note">아래 장소는 실제 가게가 아니라 이런 곳을 찾아보라는 예시예요. 사는 동네에 맞게 바꿔 주세요.</p>
+    <div class="places">
+      <div class="place">
+        <h3>☕ 골목 끝 작은 카페</h3>
+        <p>창가 자리에 앉아 따뜻한 음료 한 잔으로 하루를 시작해요.</p>
+      </div>
+      <div class="place">
+        <h3>📚 오래된 동네 책방</h3>
+        <p>천천히 책장을 둘러보다 마음에 드는 문장 하나를 찾아요.</p>
+      </div>
+      <div class="place">
+        <h3>🌇 언덕 위 산책길</h3>
+        <p>해 질 무렵 골목 지붕들이 내려다보이는 길을 걸어요.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 하루 일정표 -->
+  <section>
+    <h2>하루 일정표 <span class="tag">예시</span></h2>
+    <p class="note">시간은 참고용 예시예요. 내 속도에 맞게 바꿔도 괜찮아요.</p>
+    <table>
+      <tr><th>시간</th><th>할 일</th></tr>
+      <tr><td>11:00</td><td>골목 입구에서 출발, 천천히 걷기 시작</td></tr>
+      <tr><td>12:00</td><td>동네 밥집에서 점심</td></tr>
+      <tr><td>13:30</td><td>골목 끝 작은 카페에서 쉬어 가기</td></tr>
+      <tr><td>15:00</td><td>오래된 동네 책방 구경</td></tr>
+      <tr><td>17:00</td><td>언덕 위 산책길에서 노을 보기</td></tr>
+      <tr><td>18:30</td><td>저녁 먹고 집으로</td></tr>
+    </table>
+  </section>
+
+  <!-- 예상 비용 -->
+  <section>
+    <h2>예상 비용 (1인) <span class="tag">예시</span></h2>
+    <p class="note">실제 가격이 아닌 예시 금액이에요. 지역과 가게에 따라 달라요.</p>
+    <table>
+      <tr><th>항목</th><th>금액</th></tr>
+      <tr><td>교통비</td><td>약 5,000원 (예시)</td></tr>
+      <tr><td>점심</td><td>약 10,000원 (예시)</td></tr>
+      <tr><td>카페</td><td>약 6,000원 (예시)</td></tr>
+      <tr><td>책 한 권</td><td>약 15,000원 (예시)</td></tr>
+      <tr><td>저녁</td><td>약 12,000원 (예시)</td></tr>
+      <tr class="total"><td>합계</td><td>약 48,000원 (예시)</td></tr>
+    </table>
+  </section>
+
+  <!-- 문의 버튼 -->
+  <section class="contact">
+    <h2>궁금한 점이 있나요?</h2>
+    <p class="note">문의처는 아직 정해지지 않았어요. 연락처가 생기면 버튼에 연결해 주세요.</p>
+    <!-- 나중에 연락처가 생기면 onclick 대신 예: href="mailto:주소" 로 바꾸면 돼요 -->
+    <button class="btn" type="button" onclick="alert('문의처는 아직 준비 중이에요. 조금만 기다려 주세요!')">문의하기</button>
+  </section>
+
+</div>
+</body>
+</html>
