@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>골목 여행 홍보 영상 (15초)</title>
+<!-- 글꼴: 인터넷이 안 돼도 컴퓨터에 있는 한글 글꼴로 대신 보이도록 뒤에 여러 개를 적어 두었어요 -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+  /* ===== 색상 (tour.html과 같은 분홍 계열, 배경은 어둡게) ===== */
+  :root {
+    --bg: #12081A;       /* 아주 어두운 보라빛 검정 */
+    --pink: #FF5C9A;     /* 선명한 분홍 */
+    --pink-soft: #FFB3CF;
+    --white: #FFFFFF;
+    --yellow: #FFE45C;   /* 강조용 노랑 */
+    --kfont: 'Jua', 'Pretendard Variable', Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+  }
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+
+  /* ===== 16:9 화면 =====
+     영상은 1920x1080 크기로 만들고, 창 크기에 맞게 통째로 줄이거나 키워요 (아래 script의 fitStage) */
+  #stage {
+    position: absolute; left: 50%; top: 50%;
+    width: 1920px; height: 1080px;
+    margin-left: -960px; margin-top: -540px;
+    background: radial-gradient(circle at 50% 45%, #2A1236 0%, var(--bg) 70%);
+    overflow: hidden;
+    font-family: var(--kfont);
+    color: var(--white);
+  }
+  .scene {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    visibility: hidden;
+  }
+  .scene.on { visibility: visible; }
+
+  /* ===== 0~2초: 제목 쾅! ===== */
+  #title {
+    font-size: 250px; line-height: 1.1; margin: 0; font-weight: 400;
+    color: var(--white);
+    text-shadow: 0 0 40px var(--pink), 10px 10px 0 var(--pink);
+    word-break: keep-all;
+  }
+  .on #title { animation: slam 0.55s cubic-bezier(.2,1.6,.4,1) both; }
+  @keyframes slam {
+    0%   { transform: scale(4);   opacity: 0; filter: blur(12px); }
+    60%  { transform: scale(0.94); opacity: 1; filter: blur(0); }
+    100% { transform: scale(1); }
+  }
+  /* 쾅 할 때 번쩍 하는 흰 빛 */
+  #flash { position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; }
+  #flash.go { animation: flash 0.45s ease-out; }
+  @keyframes flash { 0% { opacity: 0.85; } 100% { opacity: 0; } }
+  /* 화면 전체가 흔들리는 효과 */
+  #stage.quake { animation: quake 0.4s linear; }
+  @keyframes quake {
+    0%,100% { transform: translate(0,0) scale(var(--s)); }
+    20% { transform: translate(-18px, 10px) scale(var(--s)); }
+    40% { transform: translate(16px, -12px) scale(var(--s)); }
+    60% { transform: translate(-10px, 8px) scale(var(--s)); }
+    80% { transform: translate(8px, -4px) scale(var(--s)); }
+  }
+
+  /* ===== 2~8초: 추천 장소 ===== */
+  .label {
+    position: absolute; top: 120px; left: 0; right: 0;
+    font-size: 64px; color: var(--yellow); letter-spacing: 8px;
+  }
+  .place {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    visibility: hidden;
+  }
+  .place.on { visibility: visible; }
+  .place .emoji { font-size: 170px; line-height: 1; margin-bottom: 30px; }
+  .place .name {
+    font-size: 180px; line-height: 1.1;
+    color: var(--white);
+    text-shadow: 8px 8px 0 var(--pink);
+    word-break: keep-all;
+  }
+  /* 장소마다 다른 등장 효과: 확대 → 슬라이드 → 흔들림 */
+  .place.on.zoom  .name, .place.on.zoom  .emoji { animation: zoomIn 0.5s cubic-bezier(.2,1.4,.4,1) both; }
+  .place.on.slide .name, .place.on.slide .emoji { animation: slideIn 0.45s cubic-bezier(.1,.9,.3,1) both; }
+  .place.on.shake .name, .place.on.shake .emoji { animation: popShake 0.7s ease-out both; }
+  @keyframes zoomIn  { 0% { transform: scale(0.2); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+  @keyframes slideIn { 0% { transform: translateX(1400px) skewX(-20deg); } 70% { transform: translateX(-40px) skewX(6deg); } 100% { transform: translateX(0) skewX(0); } }
+  @keyframes popShake {
+    0% { transform: scale(1.3); opacity: 0; }
+    15% { transform: scale(1) rotate(0); opacity: 1; }
+    30% { transform: rotate(-4deg) translateX(-14px); }
+    45% { transform: rotate(4deg) translateX(14px); }
+    60% { transform: rotate(-2deg) translateX(-6px); }
+    75%,100% { transform: rotate(0) translateX(0); }
+  }
+  /* 6.5~8초: 세 곳을 한 번에 정리 */
+  #recap { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; visibility: hidden; }
+  #recap.on { visibility: visible; }
+  #recap div { font-size: 110px; opacity: 0; }
+  #recap.on div { animation: dropIn 0.35s ease-out both; }
+  #recap.on div:nth-child(2) { animation-delay: 0.2s; }
+  #recap.on div:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes dropIn { 0% { transform: translateY(-80px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+
+  /* ===== 8~12초: 숫자 카운트업 ===== */
+  .counter-title { font-size: 80px; color: var(--yellow); margin-bottom: 10px; }
+  #count {
+    font-family: 'Pretendard Variable', Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    font-weight: 900; font-size: 300px; line-height: 1;
+    color: var(--white);
+    text-shadow: 0 0 50px var(--pink);
+    font-variant-numeric: tabular-nums;
+  }
+  #count small { font-size: 140px; color: var(--pink-soft); }
+  .example-tag {
+    margin-top: 40px; font-size: 54px;
+    color: var(--bg); background: var(--yellow);
+    padding: 6px 30px; border-radius: 40px;
+  }
+  .sub { margin-top: 30px; font-size: 60px; color: var(--pink-soft); }
+
+  /* ===== 12~15초: 마지막 문구 ===== */
+  #go {
+    font-size: 260px; line-height: 1.1; margin: 0; font-weight: 400;
+    color: var(--pink);
+    text-shadow: 0 0 60px rgba(255,92,154,.7);
+  }
+  .on #go { animation: slam 0.6s cubic-bezier(.2,1.6,.4,1) both; }
+  #url {
+    margin-top: 50px; font-size: 64px;
+    font-family: 'Pretendard Variable', Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    font-weight: 700;
+    color: var(--bg); background: var(--white);
+    padding: 14px 44px; border-radius: 60px;
+    opacity: 0;
+  }
+  .on #url { animation: fadeUp 0.5s ease-out 0.6s both; }
+  @keyframes fadeUp { 0% { transform: translateY(40px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+
+  /* 아래쪽 진행 막대 (15초 동안 차오름) */
+  #bar { position: absolute; left: 0; bottom: 0; height: 12px; width: 0; background: var(--pink); }
+
+  /* ===== 오른쪽 아래 "다시보기" 버튼 ===== */
+  #replay {
+    position: fixed; right: 24px; bottom: 24px; z-index: 10;
+    font-family: var(--kfont); font-size: 22px;
+    color: #fff; background: var(--pink);
+    border: none; border-radius: 30px; padding: 12px 26px;
+    cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,.5);
+  }
+  #replay:hover { background: #ff7fb0; }
+</style>
+</head>
+<body>
+
+<div id="stage">
+  <!-- 장면 1: 제목 (0~2초) -->
+  <div class="scene" id="s1">
+    <h1 id="title">작은 행복 찾는<br>골목 여행</h1>
+  </div>
+
+  <!-- 장면 2: 추천 장소 (2~8초) — 이름은 tour.html과 똑같아요 -->
+  <div class="scene" id="s2">
+    <div class="label">추천 장소</div>
+    <div class="place zoom"  id="p1"><div class="emoji">☕</div><div class="name">골목 끝 작은 카페</div></div>
+    <div class="place slide" id="p2"><div class="emoji">📚</div><div class="name">오래된 동네 책방</div></div>
+    <div class="place shake" id="p3"><div class="emoji">🌇</div><div class="name">언덕 위 산책길</div></div>
+    <div id="recap">
+      <div>☕ 골목 끝 작은 카페</div>
+      <div>📚 오래된 동네 책방</div>
+      <div>🌇 언덕 위 산책길</div>
+    </div>
+  </div>
+
+  <!-- 장면 3: 숫자 카운트업 (8~12초) — 금액과 시간은 tour.html의 예시 값이에요 -->
+  <div class="scene" id="s3">
+    <div class="counter-title">하루 예상 비용 (1인)</div>
+    <div id="count">약 <span id="num">0</span><small>원</small></div>
+    <div class="example-tag">예시 금액</div>
+    <div class="sub">11:00 출발 → 18:30 귀가 (예시 일정)</div>
+  </div>
+
+  <!-- 장면 4: 마지막 (12~15초) -->
+  <div class="scene" id="s4">
+    <h1 id="go">지금 떠나세요</h1>
+    <div id="url"></div>
+  </div>
+
+  <div id="flash"></div>
+  <div id="bar"></div>
+</div>
+
+<button id="replay" type="button">↻ 다시보기</button>
+
+<script>
+  // ★ 홈페이지 주소를 직접 적고 싶으면 아래 따옴표 안에 넣어 주세요. 예: 'https://내주소.com'
+  //   비워 두면, 이 페이지가 올라간 인터넷 주소를 자동으로 보여 줘요.
+  var HOME_URL = '';
+
+  // tour.html의 예상 비용 합계 (예시 금액)
+  var COST = 48000;
+
+  // ----- 홈페이지 주소 정하기 -----
+  function homeAddress() {
+    if (HOME_URL) return HOME_URL;
+    if (location.protocol === 'http:' || location.protocol === 'https:') {
+      // 예: jeongyun0.github.io/jeongyun/promo.html → jeongyun0.github.io/jeongyun/
+      return location.host + location.pathname.replace(/[^\/]*$/, '');
+    }
+    return 'index.html'; // 내 컴퓨터에서 파일로 열었을 때
+  }
+  document.getElementById('url').textContent = homeAddress();
+
+  // ----- 16:9 화면을 창 크기에 맞추기 -----
+  var stage = document.getElementById('stage');
+  function fitStage() {
+    var s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    stage.style.setProperty('--s', s);
+    stage.style.transform = 'scale(' + s + ')';
+  }
+  window.addEventListener('resize', fitStage);
+  fitStage();
+
+  // ----- 타임라인: [시작 초, 끝 초, 켤 요소 id] -----
+  var timeline = [
+    [0,    2,   's1'],
+    [2,    8,   's2'],
+    [2,    3.5, 'p1'],  // 확대
+    [3.5,  5,   'p2'],  // 슬라이드
+    [5,    6.5, 'p3'],  // 흔들림
+    [6.5,  8,   'recap'],
+    [8,    12,  's3'],
+    [12,   999, 's4']   // 마지막 문구는 끝나도 계속 남아 있어요
+  ];
+  var DURATION = 15;
+  var startTime = 0, frame = 0, shown = {};
+
+  function bang() { // 쾅! 효과 (번쩍 + 흔들림)
+    var f = document.getElementById('flash');
+    f.classList.remove('go'); stage.classList.remove('quake');
+    void f.offsetWidth; // 애니메이션을 처음부터 다시 시작하게 하는 요령
+    f.classList.add('go'); stage.classList.add('quake');
+  }
+
+  function tick(now) {
+    var t = (now - startTime) / 1000; // 지금까지 흐른 초
+
+    timeline.forEach(function (item) {
+      var el = document.getElementById(item[2]);
+      var active = t >= item[0] && t < item[1];
+      if (active && !shown[item[2]]) {
+        el.classList.add('on');
+        if (item[2] === 's1' || item[2] === 's4' || item[2] === 'p3') bang();
+      }
+      if (!active && shown[item[2]]) el.classList.remove('on');
+      shown[item[2]] = active;
+    });
+
+    // 8.3초~11초 동안 0 → 48,000 으로 숫자가 올라가요 (끝에서 천천히 멈추게)
+    var p = Math.min(Math.max((t - 8.3) / 2.7, 0), 1);
+    var eased = 1 - Math.pow(1 - p, 3);
+    var value = Math.round(COST * eased / 100) * 100;
+    document.getElementById('num').textContent = value.toLocaleString('ko-KR');
+
+    document.getElementById('bar').style.width = Math.min(t / DURATION, 1) * 100 + '%';
+
+    if (t < DURATION) frame = requestAnimationFrame(tick);
+  }
+
+  function play() {
+    cancelAnimationFrame(frame);
+    timeline.forEach(function (item) { document.getElementById(item[2]).classList.remove('on'); });
+    shown = {};
+    startTime = performance.now();
+    frame = requestAnimationFrame(tick);
+  }
+
+  document.getElementById('replay').addEventListener('click', play);
+
+  // 글꼴이 준비되면 자동 재생 (인터넷이 느려도 1.5초 넘게 기다리지는 않아요)
+  var started = false;
+  function startOnce() { if (!started) { started = true; play(); } }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(startOnce);
+  setTimeout(startOnce, 1500);
+</script>
+</body>
+</html>
