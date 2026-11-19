@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Batang:wght@400;700&display=swap">
+<style>
+body{margin:0;background:#F3E4EB;color:#1E2547;font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#C2477A}a:hover{color:#1E2547}
+</style>
+</helmet>
+
+<div style="padding:56px 56px 80px;display:flex;flex-direction:column;gap:40px;word-break:keep-all;line-height:1.6">
+  <div style="display:flex;flex-direction:column;gap:6px">
+    <span style="font-family:Jua,sans-serif;font-size:30px">리본 받기 · PC 시안</span>
+    <span style="font-size:15px;color:#3B4166">1440 × 900 기준. 답장과 리본함은 같은 색 정의를 써요. Tweaks에서 오늘의 감정 색을 바꿔 보세요.</span>
+  </div>
+
+  <!-- 1 Reply -->
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <span style="align-self:flex-start;padding:6px 14px;border-radius:999px;background:#1E2547;color:#FFF5F8;font-size:13px;font-weight:700">1 · 제이의 답장</span>
+    <div data-screen-label="01 Reply PC" style="width:1440px;height:900px;border-radius:20px;overflow:hidden;background:#FFF5F8;box-shadow:0 24px 60px rgba(30,37,71,.14);display:flex;flex-direction:column">
+      <header style="flex:none;height:72px;padding:0 56px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #F6DDE7">
+        <div style="display:flex;align-items:center;gap:10px">
+          <svg width="28" height="19" viewBox="0 0 26 18"><polygon points="0,1 12,9 0,17" fill="#F28DB2"></polygon><polygon points="26,1 14,9 26,17" fill="#F28DB2"></polygon><circle cx="13" cy="9" r="3.6" fill="#E26F9C"></circle></svg>
+          <span style="font-family:Jua,sans-serif;font-size:21px">윤제이</span>
+        </div>
+        <nav style="display:flex;gap:8px">
+          <span style="padding:9px 18px;border-radius:999px;font-size:15px;font-weight:600">이야기 남기기</span>
+          <span style="padding:9px 18px;border-radius:999px;font-size:15px;font-weight:600;background:#FFFFFF;box-shadow:0 2px 8px rgba(30,37,71,.06)">받은 답장</span>
+          <span style="padding:9px 18px;border-radius:999px;font-size:15px;font-weight:600">나의 리본함</span>
+        </nav>
+      </header>
+      <div style="flex:1;display:grid;grid-template-columns:1fr 720px 1fr;gap:48px;padding:44px 56px 0;overflow:hidden">
+        <aside style="display:flex;flex-direction:column;gap:14px;padding-top:8px;justify-self:end;width:240px">
+          <span style="font-size:13px;font-weight:700;color:#C2477A">오늘 남긴 이야기</span>
+          <div style="background:#FFFFFF;border-radius:20px;padding:18px;box-shadow:0 4px 14px rgba(30,37,71,.05);display:flex;flex-direction:column;gap:8px">
+            <span style="font-size:13px;color:#4A5072">11월 12일 · 하늘</span>
+            <span style="font-size:14px;line-height:1.7;color:#2E3458;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden">회의가 세 개나 연달아 있었고 점심도 제대로 못 먹었어요. 집에 오는 버스에서 창밖만 한참 봤어요.</span>
+          </div>
+        </aside>
+
+        <div style="display:flex;flex-direction:column;align-items:center;gap:18px">
+          <div style="position:relative;width:100%;background:#FFFDF8;border-radius:28px 28px 20px 20px;padding:48px 64px 40px;box-shadow:0 14px 40px rgba(30,37,71,.08);display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline">
+              <span style="font-family:Jua,sans-serif;font-size:24px">제이의 답장</span>
+              <span style="font-size:14px;color:#4A5072">2026년 11월 12일 목요일</span>
+            </div>
+            <div style="display:flex;flex-direction:column;background-image:{{ linesBg }};background-size:100% 34px">
+              <p style="margin:0;font-family:'Gowun Batang',serif;font-size:17px;line-height:34px">하늘님께,</p>
+              <p style="margin:0;font-family:'Gowun Batang',serif;font-size:17px;line-height:34px;text-indent:1em;text-wrap:pretty">오늘 이야기, 끝까지 잘 읽었어요. 회의가 연달아 이어지는 동안 점심 한 끼도 편히 못 드셨다니, 하루 종일 다른 사람의 속도에 맞추느라 숨 고를 틈이 없으셨던 것 같아요.</p>
+              <p style="margin:0;font-family:'Gowun Batang',serif;font-size:17px;line-height:34px;text-indent:1em;text-wrap:pretty">그런데도 집에 오는 버스에서 창밖을 오래 보셨다고 쓰셨지요. 그 몇 분이 오늘 하늘님께 꼭 필요한 쉼이었을 거라고 생각해요. 오늘은 더 잘하지 않아도 괜찮은 날이에요.</p>
+              <p style="margin:0;font-family:'Gowun Batang',serif;font-size:17px;line-height:34px;text-align:right">— 제이 드림</p>
+            </div>
+            <div style="position:relative;margin:14px -88px 0;display:flex;flex-direction:column;align-items:center">
+              <svg width="76" height="50" viewBox="0 0 40 26" style="margin-bottom:-30px;position:relative;z-index:1;filter:drop-shadow(0 2px 3px rgba(30,37,71,.15))">
+                <path d="M20 12 C13 1 2 1 3 9 C4 17 13 16 20 12Z" fill="{{ today.deep }}" stroke="{{ today.stitchSolid }}" stroke-width=".8"></path>
+                <path d="M20 12 C27 1 38 1 37 9 C36 17 27 16 20 12Z" fill="{{ today.deep }}" stroke="{{ today.stitchSolid }}" stroke-width=".8"></path>
+                <circle cx="20" cy="12" r="3.6" fill="{{ today.base }}" stroke="{{ today.stitchSolid }}" stroke-width=".8"></circle>
+              </svg>
+              <div style="width:100%;filter:drop-shadow(0 5px 10px rgba(30,37,71,.13))">
+                <div style="position:relative;height:72px;display:flex;align-items:center;justify-content:center;padding:0 48px;background:{{ today.bg }};clip-path:polygon(0 0,100% 0,calc(100% - 24px) 50%,100% 100%,0 100%,24px 50%)">
+                  <div style="position:absolute;left:32px;right:32px;top:8px;bottom:8px;border-top:1.5px dashed {{ today.stitch }};border-bottom:1.5px dashed {{ today.stitch }}"></div>
+                  <span style="position:relative;font-family:Jua,sans-serif;font-size:23px;color:{{ today.ink }}">{{ today.sentence }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:#FFFFFF;font-size:14px;box-shadow:0 2px 8px rgba(30,37,71,.05)">
+            <span style="width:11px;height:11px;border-radius:50%;background:{{ today.base }};box-shadow:0 0 0 1.5px {{ today.deep }}"></span>
+            <span>{{ today.caption }}</span>
+          </div>
+        </div>
+
+        <aside style="display:flex;flex-direction:column;gap:10px;padding-top:8px;width:220px">
+          <span style="display:flex;align-items:center;justify-content:center;height:52px;border-radius:999px;background:#F28DB2;font-weight:700;font-size:16px;box-shadow:0 8px 20px rgba(242,141,178,.32)">리본함 보기</span>
+          <span style="display:flex;align-items:center;justify-content:center;height:52px;border-radius:999px;background:#FFFFFF;font-weight:600;font-size:16px;box-shadow:0 2px 8px rgba(30,37,71,.06)">새 이야기 남기기</span>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2 Ribbon box -->
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <span style="align-self:flex-start;padding:6px 14px;border-radius:999px;background:#1E2547;color:#FFF5F8;font-size:13px;font-weight:700">2 · 나의 리본함 (리본을 눌러 보세요)</span>
+    <div data-screen-label="02 Ribbon box PC" style="width:1440px;height:900px;border-radius:20px;overflow:hidden;background:#FFF5F8;box-shadow:0 24px 60px rgba(30,37,71,.14);display:flex;flex-direction:column">
+      <header style="flex:none;height:72px;padding:0 56px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #F6DDE7">
+        <div style="display:flex;align-items:center;gap:10px">
+          <svg width="28" height="19" viewBox="0 0 26 18"><polygon points="0,1 12,9 0,17" fill="#F28DB2"></polygon><polygon points="26,1 14,9 26,17" fill="#F28DB2"></polygon><circle cx="13" cy="9" r="3.6" fill="#E26F9C"></circle></svg>
+          <span style="font-family:Jua,sans-serif;font-size:21px">윤제이</span>
+        </div>
+        <nav style="display:flex;gap:8px">
+          <span style="padding:9px 18px;border-radius:999px;font-size:15px;font-weight:600">이야기 남기기</span>
+          <span style="padding:9px 18px;border-radius:999px;font-size:15px;font-weight:600">받은 답장</span>
+          <span style="padding:9px 18px;border-radius:999px;font-size:15px;font-weight:600;background:#FFFFFF;box-shadow:0 2px 8px rgba(30,37,71,.06)">나의 리본함</span>
+        </nav>
+      </header>
+      <div style="flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) 560px;gap:40px;padding:36px 56px 0">
+        <div style="min-height:0;display:flex;flex-direction:column;gap:22px">
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px">
+            <span style="font-family:Jua,sans-serif;font-size:32px;line-height:1.2">나의 리본함</span>
+            <span style="padding:6px 14px;border-radius:999px;background:#FFFFFF;font-size:14px;font-weight:600;box-shadow:0 2px 8px rgba(30,37,71,.06)">{{ totalLabel }}</span>
+          </div>
+          <div style="background:#FFFFFF;border-radius:24px;padding:22px 26px;box-shadow:0 6px 20px rgba(30,37,71,.06);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px 28px;align-items:center">
+            <div style="display:flex;flex-direction:column;gap:4px">
+              <span style="font-size:13px;font-weight:700;color:#C2477A">11월의 리본</span>
+              <span style="font-family:Jua,sans-serif;font-size:22px;line-height:1.35;text-wrap:pretty">{{ statHeadline }}</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <div style="display:flex;height:16px;border-radius:999px;overflow:hidden;gap:2px">
+                <sc-for list="{{ stats }}" as="s" hint-placeholder-count="5">
+                  <div style="flex:{{ s.count }};background:{{ s.base }};box-shadow:inset 0 0 0 1px {{ s.deep }}"></div>
+                </sc-for>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px">
+                <sc-for list="{{ stats }}" as="s" hint-placeholder-count="5">
+                  <span style="display:flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:#FFF5F8;font-size:12px;font-weight:600">
+                    <span style="width:9px;height:9px;border-radius:50%;background:{{ s.base }};box-shadow:0 0 0 1.5px {{ s.deep }}"></span>{{ s.label }}
+                  </span>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+          <div style="flex:1;min-height:0;overflow:auto;padding:4px 16px 32px 0;display:flex;flex-direction:column;gap:10px">
+            <sc-for list="{{ box }}" as="r" hint-placeholder-count="6">
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <sc-if value="{{ r.monthHead }}" hint-placeholder-val="{{ false }}">
+                  <span style="font-size:13px;font-weight:700;color:#4A5072;margin-top:6px">{{ r.monthHead }}</span>
+                </sc-if>
+                <button type="button" onClick="{{ r.open }}" style="all:unset;cursor:pointer;display:flex;align-items:center;gap:16px;transition:transform .2s;transform:{{ r.shift }}">
+                  <span style="width:52px;flex:none;display:flex;flex-direction:column;align-items:center;line-height:1.2">
+                    <span style="font-family:Jua,sans-serif;font-size:18px">{{ r.day }}</span>
+                    <span style="font-size:12px;color:#4A5072">{{ r.dow }}</span>
+                  </span>
+                  <span style="flex:1;min-width:0;filter:{{ r.shadow }}">
+                    <span style="position:relative;height:52px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 32px;background:{{ r.bg }};clip-path:polygon(0 0,100% 0,calc(100% - 16px) 50%,100% 100%,0 100%,16px 50%)">
+                      <span style="position:absolute;left:20px;right:20px;top:6px;bottom:6px;border-top:1.5px dashed {{ r.stitch }};border-bottom:1.5px dashed {{ r.stitch }}"></span>
+                      <span style="position:relative;font-size:15px;font-weight:600;color:{{ r.ink }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.sentence }}</span>
+                      <span style="position:relative;flex:none;font-size:12px;font-weight:600;color:{{ r.ink }}">{{ r.name }}</span>
+                    </span>
+                  </span>
+                </button>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="min-height:0;overflow:auto;padding-bottom:36px">
+          <div style="background:#FFFDF8;border-radius:28px;padding:36px 40px;box-shadow:0 14px 40px rgba(30,37,71,.08);display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <span style="font-size:14px;font-weight:600;color:#3B4166">{{ sel.dateLong }}</span>
+              <span style="padding:5px 14px;border-radius:999px;background:{{ sel.base }};color:{{ sel.ink }};font-size:13px;font-weight:700;box-shadow:inset 0 0 0 1.5px {{ sel.deep }}">{{ sel.tag }}</span>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center">
+              <svg width="64" height="42" viewBox="0 0 40 26" style="margin-bottom:-26px;position:relative;z-index:1">
+                <path d="M20 12 C13 1 2 1 3 9 C4 17 13 16 20 12Z" fill="{{ sel.deep }}" stroke="{{ sel.stitchSolid }}" stroke-width=".8"></path>
+                <path d="M20 12 C27 1 38 1 37 9 C36 17 27 16 20 12Z" fill="{{ sel.deep }}" stroke="{{ sel.stitchSolid }}" stroke-width=".8"></path>
+                <circle cx="20" cy="12" r="3.6" fill="{{ sel.base }}" stroke="{{ sel.stitchSolid }}" stroke-width=".8"></circle>
+              </svg>
+              <div style="width:100%;filter:drop-shadow(0 4px 8px rgba(30,37,71,.12))">
+                <div style="position:relative;height:66px;display:flex;align-items:center;justify-content:center;padding:0 40px;background:{{ sel.bg }};clip-path:polygon(0 0,100% 0,calc(100% - 20px) 50%,100% 100%,0 100%,20px 50%)">
+                  <div style="position:absolute;left:28px;right:28px;top:7px;bottom:7px;border-top:1.5px dashed {{ sel.stitch }};border-bottom:1.5px dashed {{ sel.stitch }}"></div>
+                  <span style="position:relative;font-family:Jua,sans-serif;font-size:21px;color:{{ sel.ink }}">{{ sel.sentence }}</span>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:12px;font-weight:700;color:#C2477A">그날 제이의 답장</span>
+              <p style="margin:0;font-family:'Gowun Batang',serif;font-size:17px;line-height:34px;text-wrap:pretty;background-image:{{ linesBg }};background-size:100% 34px">{{ sel.reply }}</p>
+              <span style="align-self:flex-end;font-family:'Gowun Batang',serif;font-size:15px">— 제이</span>
+            </div>
+            <div style="display:flex;gap:10px">
+              <span style="flex:1;display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#1E2547;color:#FFF5F8;font-weight:700;font-size:15px">답장 전체 보기</span>
+              <span style="flex:1;display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:#FFFFFF;font-weight:600;font-size:15px;box-shadow:inset 0 0 0 1.5px #F1D4E0">그날 남긴 이야기</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2-1 Empty -->
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <span style="align-self:flex-start;padding:6px 14px;border-radius:999px;background:#1E2547;color:#FFF5F8;font-size:13px;font-weight:700">2-1 · 리본함 (비어 있을 때)</span>
+    <div data-screen-label="02-1 Empty PC" style="width:1440px;height:900px;border-radius:20px;overflow:hidden;background:#FFF5F8;box-shadow:0 24px 60px rgba(30,37,71,.14);display:flex;flex-direction:column">
+      <header style="flex:none;height:72px;padding:0 56px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #F6DDE7">
+        <div style="display:flex;align-items:center;gap:10px">
+          <svg width="28" height="19" viewBox="0 0 26 18"><polygon points="0,1 12,9 0,17" fill="#F28DB2"></polygon><polygon points="26,1 14,9 26,17" fill="#F28DB2"></polygon><circle cx="13" cy="9" r="3.6" fill="#E26F9C"></circle></svg>
+          <span style="font-family:Jua,sans-serif;font-size:21px">윤제이</span>
+        </div>
+        <nav style="display:flex;gap:8px">
+          <span style="padding:9px 18px;border-radius:999px;font-size:15px;font-weight:600">이야기 남기기</span>
+          <span style="padding:9px 18px;border-radius:999px;font-size:15px;font-weight:600">받은 답장</span>
+          <span style="padding:9px 18px;border-radius:999px;font-size:15px;font-weight:600;background:#FFFFFF;box-shadow:0 2px 8px rgba(30,37,71,.06)">나의 리본함</span>
+        </nav>
+      </header>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding-bottom:60px;text-align:center">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:12px">
+          <svg width="420" height="60" viewBox="0 0 420 60"><polygon points="2,2 418,2 400,30 418,58 2,58 20,30" fill="#FFFFFF" stroke="#EBC3D3" stroke-width="2" stroke-dasharray="8 6" stroke-linejoin="round"></polygon></svg>
+          <svg width="340" height="60" viewBox="0 0 340 60" style="opacity:.75"><polygon points="2,2 338,2 320,30 338,58 2,58 20,30" fill="#FFFFFF" stroke="#DCD0F2" stroke-width="2" stroke-dasharray="8 6" stroke-linejoin="round"></polygon></svg>
+          <svg width="260" height="60" viewBox="0 0 260 60" style="opacity:.55"><polygon points="2,2 258,2 240,30 258,58 2,58 20,30" fill="#FFFFFF" stroke="#F5CDB8" stroke-width="2" stroke-dasharray="8 6" stroke-linejoin="round"></polygon></svg>
+        </div>
+        <span style="font-family:Jua,sans-serif;font-size:32px">첫 리본을 기다리고 있어요</span>
+        <span style="font-size:17px;color:#3B4166;max-width:440px;text-wrap:pretty">오늘 이야기를 남겨 주시면, 제이가 답장 끝에 첫 리본을 달아 드릴게요.</span>
+        <span style="display:flex;align-items:center;justify-content:center;height:54px;padding:0 32px;border-radius:999px;background:#F28DB2;font-weight:700;font-size:17px;margin-top:8px;box-shadow:0 8px 20px rgba(242,141,178,.32)">오늘 얘기 남기기</span>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;todayColor&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;sky&quot;,&quot;yellow&quot;,&quot;pink&quot;,&quot;green&quot;,&quot;purple&quot;,&quot;white&quot;],&quot;default&quot;:&quot;sky&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;paperLines&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+const C = {
+  sky:    { name:'하늘색', mean:'위로·쉼',        base:'#B9DCF3', deep:'#8DC1E5', ink:'#1F4A68', stitch:'rgba(31,74,104,.38)',  stitchSolid:'#6FA7CF' },
+  yellow: { name:'노란색', mean:'뿌듯함·성취',    base:'#F9DE84', deep:'#EDC552', ink:'#5E440A', stitch:'rgba(94,68,10,.38)',   stitchSolid:'#C9A23A' },
+  pink:   { name:'분홍색', mean:'설렘·애정',      base:'#F8B7CE', deep:'#EE92B4', ink:'#74234A', stitch:'rgba(116,35,74,.36)',  stitchSolid:'#D9739A' },
+  green:  { name:'연두색', mean:'새로운 시작',    base:'#CBE8AC', deep:'#A5D37E', ink:'#2F5719', stitch:'rgba(47,87,25,.36)',   stitchSolid:'#86B85E' },
+  purple: { name:'보라색', mean:'고민·생각 정리', base:'#D3C5F2', deep:'#B29EE5', ink:'#3D317A', stitch:'rgba(61,49,122,.38)',  stitchSolid:'#9581D2' },
+  white:  { name:'흰색',   mean:'버텨낸 날',      base:'#FFFDF6', deep:'#E9DDC2', ink:'#56482C', stitch:'rgba(176,148,90,.7)',  stitchSolid:'#C9B587' },
+};
+const bgOf = (k) => k === 'white'
+  ? 'linear-gradient(180deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,0) 45%,rgba(160,130,70,.06) 100%),linear-gradient(100deg,#FFFDF6 0%,#F5EDDB 48%,#FFFDF6 100%)'
+  : `linear-gradient(180deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 45%,rgba(30,37,71,.04) 100%),${C[k].base}`;
+const DOW = ['일','월','화','수','목','금','토'];
+const DATA = [
+  { d:'2026-11-12', c:null,     s:'오늘은 그냥 쉬어도 되는 날이에요', r:'회의가 연달아 이어지는 동안 숨 고를 틈이 없으셨던 것 같아요. 그런데도 버스 창밖을 오래 보셨다고 쓰셨지요. 그 몇 분이 오늘 꼭 필요한 쉼이었을 거예요. 오늘은 더 잘하지 않아도 괜찮은 날이에요.' },
+  { d:'2026-11-10', c:'white',  s:'오늘도 잘 견뎌냈어요', r:'아무에게도 티 내지 않고 하루를 끝까지 지나오셨네요. 그건 작은 일이 아니에요. 오늘 버틴 하루를 제가 잘 기억해 둘게요.' },
+  { d:'2026-11-09', c:'sky',    s:'비 오는 소리를 같이 들었어요', r:'창문에 빗소리가 닿는 동안 조금은 마음이 느슨해지셨다고 하셨지요. 그런 순간이 자주 찾아왔으면 좋겠어요.' },
+  { d:'2026-11-08', c:'yellow', s:'끝까지 해낸 당신이 자랑스러워요', r:'미뤄 두던 과제를 마침내 제출하셨군요. 마지막 문장을 쓰고 저장 버튼을 누르던 그 순간, 정말 멋지셨을 거예요.' },
+  { d:'2026-11-06', c:'sky',    s:'따뜻한 차 한 잔만큼 쉬어 가요', r:'오늘은 말을 많이 하신 날이었네요. 이제는 조용한 시간을 가지셔도 돼요. 따뜻한 차를 한 잔 드셨으면 해요.' },
+  { d:'2026-11-05', c:'purple', s:'복잡한 마음, 한 줄씩 풀어 봤어요', r:'엉킨 생각을 하나씩 꺼내 적어 주셨어요. 답을 정하지 않아도 괜찮아요. 꺼내 놓은 것만으로도 조금 가벼워졌기를 바라요.' },
+  { d:'2026-11-03', c:'yellow', s:'작은 칸 하나를 채운 날', r:'아침에 일어나 계획표의 첫 칸에 동그라미를 그리셨다고요. 그 동그라미 하나가 오늘을 잘 열어 준 것 같아요.' },
+  { d:'2026-11-01', c:'green',  s:'새 달력 첫 장을 넘겼어요', r:'11월 첫날, 새 노트를 사셨다는 이야기가 참 좋았어요. 첫 장에는 무엇을 적으셨을지 저도 조금 궁금해요.' },
+  { d:'2026-10-29', c:'pink',   s:'좋아하는 마음은 숨기지 않아도 돼요', r:'그 사람 이야기를 하실 때 문장이 조금씩 길어지셨어요. 저도 좋아하는 걸 말할 때 그래서… …죄송해요. 정말 좋은 마음이에요.' },
+  { d:'2026-10-26', c:'white',  s:'아무 일 없던 척, 잘 버텼어요', r:'괜찮은 척하는 데에도 힘이 많이 들어요. 여기서는 괜찮은 척하지 않으셔도 돼요.' },
+];
+class Component extends DCLogic {
+  state = { sel: 0 };
+  renderVals() {
+    const todayKey = this.props.todayColor ?? 'sky';
+    const list = DATA.map((x, i) => ({ ...x, c: x.c ?? todayKey, i }));
+    const deco = (k) => ({ ...C[k], bg: bgOf(k) });
+    let lastMonth = null;
+    const box = list.map((x) => {
+      const dt = new Date(x.d + 'T00:00:00'); const m = dt.getMonth() + 1;
+      const head = m !== lastMonth ? `${dt.getFullYear()}년 ${m}월` : ''; lastMonth = m;
+      const on = x.i === this.state.sel;
+      return { ...deco(x.c), sentence: x.s, day: `${m}.${dt.getDate()}`, dow: DOW[dt.getDay()], monthHead: head,
+        shift: on ? 'translateX(12px)' : 'none',
+        shadow: on ? 'drop-shadow(0 6px 12px rgba(30,37,71,.18))' : 'drop-shadow(0 3px 6px rgba(30,37,71,.09))',
+        open: () => this.setState({ sel: x.i }) };
+    });
+    const o = {}; list.filter((x) => x.d.startsWith('2026-11')).forEach((x) => (o[x.c] = (o[x.c] || 0) + 1));
+    const nov = Object.entries(o).sort((a, b) => b[1] - a[1]);
+    const top = nov.filter((e) => e[1] === nov[0][1]).map((e) => C[e[0]].name);
+    const s = list[this.state.sel]; const t = new Date(s.d + 'T00:00:00');
+    return {
+      linesBg: (this.props.paperLines ?? true) ? 'linear-gradient(180deg,transparent 0 32px,#F1E3E8 32px 33px,transparent 33px)' : 'none',
+      today: { ...deco(todayKey), sentence: list[0].s, caption: `${C[todayKey].name} 리본(${C[todayKey].mean})이 리본함에 담겼어요` },
+      totalLabel: `리본 ${list.length}개`,
+      statHeadline: `이번 달엔 ${top.join('과 ')} 리본이 가장 많았어요`,
+      stats: nov.map(([k, n]) => ({ ...C[k], count: n, label: `${C[k].name} ${n}` })),
+      box,
+      sel: { ...deco(s.c), sentence: s.s, reply: s.r, tag: `${C[s.c].name} · ${C[s.c].mean}`, dateLong: `${t.getFullYear()}년 ${t.getMonth() + 1}월 ${t.getDate()}일 ${DOW[t.getDay()]}요일` },
+    };
+  }
+}
+</script>
+</body>
+</html>

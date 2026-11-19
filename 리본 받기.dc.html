@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Batang:wght@400;700&display=swap">
+<style>
+body{margin:0;background:#F6E8EE;color:#1E2547;font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#C2477A}a:hover{color:#1E2547}
+</style>
+</helmet>
+
+<div style="min-height:100vh;padding:56px 48px 80px;display:flex;flex-direction:column;gap:36px;word-break:keep-all;line-height:1.6">
+  <div style="display:flex;flex-direction:column;gap:6px">
+    <span style="font-family:Jua,sans-serif;font-size:30px">리본 받기 · 화면 시안</span>
+    <span style="font-size:15px;color:#3B4166">답장 리본 색은 리본함·꽃다발과 같은 색 정의를 써요. 오른쪽 Tweaks에서 오늘의 감정 색을 바꿔 보세요.</span>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start">
+
+    <!-- 1 Reply -->
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <span style="align-self:flex-start;padding:6px 14px;border-radius:999px;background:#1E2547;color:#FFF5F8;font-size:13px;font-weight:700">1 · 제이의 답장</span>
+      <div data-screen-label="01 Reply" style="position:relative;width:390px;height:844px;border-radius:44px;overflow:hidden;background:#FFF5F8;box-shadow:0 24px 60px rgba(30,37,71,.14);display:flex;flex-direction:column">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:54px 22px 12px">
+          <span style="width:40px;height:40px;border-radius:50%;background:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 2px 8px rgba(30,37,71,.06)">‹</span>
+          <span style="font-family:Jua,sans-serif;font-size:19px">제이의 답장</span>
+          <span style="width:40px"></span>
+        </div>
+        <div style="flex:1;overflow:auto;padding:8px 20px 28px;display:flex;flex-direction:column;gap:18px">
+          <div style="position:relative;background:#FFFDF8;border-radius:24px;padding:30px 26px 26px;box-shadow:0 8px 24px rgba(30,37,71,.07);display:flex;flex-direction:column;gap:14px">
+            <span style="position:relative;font-size:13px;color:#4A5072">2026년 11월 12일 목요일</span>
+            <div style="display:flex;flex-direction:column;background-image:{{ linesBg }};background-size:100% 32px">
+            <p style="position:relative;margin:0;font-family:'Gowun Batang',serif;font-size:16px;line-height:32px">하늘님께,</p>
+            <p style="position:relative;margin:0;font-family:'Gowun Batang',serif;font-size:16px;line-height:32px;text-wrap:pretty">오늘 이야기, 끝까지 잘 읽었어요. 하루 종일 다른 사람의 속도에 맞추느라 숨 고를 틈이 없으셨던 것 같아요. 그런데도 집에 오는 길에 창밖을 오래 보셨다고 쓰셨지요. 그 몇 분이 오늘 하늘님께 꼭 필요한 쉼이었을 거라고 생각해요.</p>
+            <p style="position:relative;margin:0;font-family:'Gowun Batang',serif;font-size:16px;line-height:32px;text-indent:1em;text-wrap:pretty">오늘은 더 잘하지 않아도 괜찮은 날이에요. 따뜻하게 씻고, 일찍 누우셨으면 좋겠어요.</p>
+            <p style="position:relative;margin:0;font-family:'Gowun Batang',serif;font-size:16px;line-height:32px;text-align:right">— 제이 드림</p>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:4px">
+            <svg width="52" height="34" viewBox="0 0 40 26" style="margin-bottom:-22px;position:relative;z-index:1">
+              <path d="M20 12 C13 1 2 1 3 9 C4 17 13 16 20 12Z" fill="{{ today.deep }}" stroke="{{ today.stitchSolid }}" stroke-width=".8"></path>
+              <path d="M20 12 C27 1 38 1 37 9 C36 17 27 16 20 12Z" fill="{{ today.deep }}" stroke="{{ today.stitchSolid }}" stroke-width=".8"></path>
+              <circle cx="20" cy="12" r="3.6" fill="{{ today.base }}" stroke="{{ today.stitchSolid }}" stroke-width=".8"></circle>
+            </svg>
+            <div style="width:100%;filter:drop-shadow(0 4px 8px rgba(30,37,71,.12))">
+              <div style="position:relative;height:62px;display:flex;align-items:center;justify-content:center;padding:0 34px;background:{{ today.bg }};clip-path:polygon(0 0,100% 0,calc(100% - 18px) 50%,100% 100%,0 100%,18px 50%)">
+                <div style="position:absolute;left:24px;right:24px;top:7px;bottom:7px;border-top:1.5px dashed {{ today.stitch }};border-bottom:1.5px dashed {{ today.stitch }}"></div>
+                <span style="position:relative;font-family:Jua,sans-serif;font-size:19px;color:{{ today.ink }}">{{ today.sentence }}</span>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#3B4166">
+              <span style="width:10px;height:10px;border-radius:50%;background:{{ today.base }};box-shadow:0 0 0 1.5px {{ today.deep }}"></span>
+              <span>{{ today.caption }}</span>
+            </div>
+          </div>
+          <div style="display:flex;gap:10px;margin-top:auto">
+            <span style="flex:1;display:flex;align-items:center;justify-content:center;height:52px;border-radius:999px;background:#F28DB2;font-weight:700;font-size:16px;box-shadow:0 8px 20px rgba(242,141,178,.32)">리본함 보기</span>
+            <span style="flex:1;display:flex;align-items:center;justify-content:center;height:52px;border-radius:999px;background:#FFFFFF;font-weight:600;font-size:16px;box-shadow:0 2px 8px rgba(30,37,71,.06)">처음으로</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 Ribbon box -->
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <span style="align-self:flex-start;padding:6px 14px;border-radius:999px;background:#1E2547;color:#FFF5F8;font-size:13px;font-weight:700">2 · 나의 리본함</span>
+      <div data-screen-label="02 Ribbon box" style="position:relative;width:390px;height:844px;border-radius:44px;overflow:hidden;background:#FFF5F8;box-shadow:0 24px 60px rgba(30,37,71,.14);display:flex;flex-direction:column">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:54px 22px 10px">
+          <span style="font-family:Jua,sans-serif;font-size:24px">나의 리본함</span>
+          <span style="padding:6px 12px;border-radius:999px;background:#FFFFFF;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(30,37,71,.06)">{{ totalLabel }}</span>
+        </div>
+        <div style="flex:1;overflow:auto;padding:8px 20px 28px;display:flex;flex-direction:column;gap:18px">
+          <div style="background:#FFFFFF;border-radius:24px;padding:20px;box-shadow:0 6px 20px rgba(30,37,71,.06);display:flex;flex-direction:column;gap:14px">
+            <span style="font-size:13px;font-weight:700;color:#C2477A">11월의 리본</span>
+            <span style="font-family:Jua,sans-serif;font-size:20px;line-height:1.35;text-wrap:pretty">{{ statHeadline }}</span>
+            <div style="display:flex;height:14px;border-radius:999px;overflow:hidden;gap:2px">
+              <sc-for list="{{ stats }}" as="s" hint-placeholder-count="5">
+                <div style="flex:{{ s.count }};background:{{ s.base }};box-shadow:inset 0 0 0 1px {{ s.deep }}"></div>
+              </sc-for>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px">
+              <sc-for list="{{ stats }}" as="s" hint-placeholder-count="5">
+                <span style="display:flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:#FFF5F8;font-size:12px;font-weight:600">
+                  <span style="width:9px;height:9px;border-radius:50%;background:{{ s.base }};box-shadow:0 0 0 1.5px {{ s.deep }}"></span>{{ s.label }}
+                </span>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px;border-radius:999px;background:#EDE6FC">
+            <span style="font-size:13px;font-weight:600;color:#2E2A5C">{{ nextBouquetLabel }}</span>
+            <div style="display:flex;gap:4px">
+              <sc-for list="{{ progressDots }}" as="d" hint-placeholder-count="7">
+                <span style="width:9px;height:9px;border-radius:50%;background:{{ d.bg }};box-shadow:0 0 0 1.5px {{ d.ring }}"></span>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <sc-for list="{{ box }}" as="r" hint-placeholder-count="6">
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <sc-if value="{{ r.monthHead }}" hint-placeholder-val="{{ false }}">
+                  <span style="font-size:13px;font-weight:700;color:#4A5072;margin-top:6px">{{ r.monthHead }}</span>
+                </sc-if>
+                <button type="button" onClick="{{ r.open }}" style="all:unset;cursor:pointer;display:flex;align-items:center;gap:12px">
+                  <span style="width:44px;flex:none;display:flex;flex-direction:column;align-items:center;line-height:1.2">
+                    <span style="font-family:Jua,sans-serif;font-size:17px">{{ r.day }}</span>
+                    <span style="font-size:11px;color:#4A5072">{{ r.dow }}</span>
+                  </span>
+                  <span style="flex:1;min-width:0;filter:drop-shadow(0 3px 6px rgba(30,37,71,.10))">
+                    <span style="position:relative;height:48px;display:flex;align-items:center;padding:0 28px;background:{{ r.bg }};clip-path:polygon(0 0,100% 0,calc(100% - 14px) 50%,100% 100%,0 100%,14px 50%)">
+                      <span style="position:absolute;left:18px;right:18px;top:5px;bottom:5px;border-top:1.5px dashed {{ r.stitch }};border-bottom:1.5px dashed {{ r.stitch }}"></span>
+                      <span style="position:relative;font-size:14px;font-weight:600;color:{{ r.ink }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.sentence }}</span>
+                    </span>
+                  </span>
+                </button>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <sc-if value="{{ sheetOpen }}" hint-placeholder-val="{{ false }}">
+          <div onClick="{{ closeSheet }}" style="position:absolute;inset:0;background:rgba(30,37,71,.32)"></div>
+          <div style="position:absolute;left:0;right:0;bottom:0;max-height:78%;overflow:auto;background:#FFF5F8;border-radius:32px 32px 0 0;padding:14px 22px 34px;display:flex;flex-direction:column;gap:16px">
+            <span style="align-self:center;width:40px;height:5px;border-radius:999px;background:#E9CCD8"></span>
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <span style="font-size:14px;font-weight:600;color:#3B4166">{{ sel.dateLong }}</span>
+              <span style="padding:4px 12px;border-radius:999px;background:{{ sel.base }};color:{{ sel.ink }};font-size:12px;font-weight:700;box-shadow:inset 0 0 0 1.5px {{ sel.deep }}">{{ sel.tag }}</span>
+            </div>
+            <div style="filter:drop-shadow(0 4px 8px rgba(30,37,71,.12))">
+              <div style="position:relative;height:58px;display:flex;align-items:center;justify-content:center;padding:0 32px;background:{{ sel.bg }};clip-path:polygon(0 0,100% 0,calc(100% - 16px) 50%,100% 100%,0 100%,16px 50%)">
+                <div style="position:absolute;left:22px;right:22px;top:6px;bottom:6px;border-top:1.5px dashed {{ sel.stitch }};border-bottom:1.5px dashed {{ sel.stitch }}"></div>
+                <span style="position:relative;font-family:Jua,sans-serif;font-size:18px;color:{{ sel.ink }}">{{ sel.sentence }}</span>
+              </div>
+            </div>
+            <div style="background:#FFFDF8;border-radius:20px;padding:20px;box-shadow:0 4px 16px rgba(30,37,71,.06);display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:12px;font-weight:700;color:#C2477A">그날 제이의 답장</span>
+              <p style="margin:0;font-family:'Gowun Batang',serif;font-size:15px;line-height:1.9;text-wrap:pretty">{{ sel.reply }}</p>
+            </div>
+            <button type="button" onClick="{{ closeSheet }}" style="font:inherit;font-size:15px;font-weight:700;height:50px;border:none;border-radius:999px;background:#1E2547;color:#FFF5F8;cursor:pointer">닫기</button>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+
+    <!-- 2-1 Empty -->
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <span style="align-self:flex-start;padding:6px 14px;border-radius:999px;background:#1E2547;color:#FFF5F8;font-size:13px;font-weight:700">2-1 · 리본함 (비어 있을 때)</span>
+      <div data-screen-label="02-1 Empty box" style="position:relative;width:390px;height:844px;border-radius:44px;overflow:hidden;background:#FFF5F8;box-shadow:0 24px 60px rgba(30,37,71,.14);display:flex;flex-direction:column">
+        <div style="padding:54px 22px 10px">
+          <span style="font-family:Jua,sans-serif;font-size:24px">나의 리본함</span>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:0 36px 80px;text-align:center">
+          <svg width="260" height="54" viewBox="0 0 260 54"><polygon points="2,2 258,2 244,27 258,52 2,52 16,27" fill="#FFFFFF" stroke="#EBC3D3" stroke-width="2" stroke-dasharray="7 5" stroke-linejoin="round"></polygon></svg>
+          <svg width="210" height="54" viewBox="0 0 210 54" style="opacity:.75"><polygon points="2,2 208,2 194,27 208,52 2,52 16,27" fill="#FFFFFF" stroke="#DCD0F2" stroke-width="2" stroke-dasharray="7 5" stroke-linejoin="round"></polygon></svg>
+          <span style="font-family:Jua,sans-serif;font-size:23px;margin-top:10px">첫 리본을 기다리고 있어요</span>
+          <span style="font-size:15px;color:#3B4166;text-wrap:pretty">오늘 이야기를 남겨 주시면, 제이가 답장 끝에 첫 리본을 달아 드릴게요.</span>
+          <span style="display:flex;align-items:center;justify-content:center;height:52px;padding:0 28px;border-radius:999px;background:#F28DB2;font-weight:700;font-size:16px;margin-top:6px;box-shadow:0 8px 20px rgba(242,141,178,.32)">오늘 얘기 남기기</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 Bouquet -->
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <span style="align-self:flex-start;padding:6px 14px;border-radius:999px;background:#1E2547;color:#FFF5F8;font-size:13px;font-weight:700">3 · 꽃다발 완성</span>
+      <div data-screen-label="03 Bouquet" style="position:relative;width:390px;height:844px;border-radius:44px;overflow:hidden;background:#FFF5F8;box-shadow:0 24px 60px rgba(30,37,71,.14);display:flex;flex-direction:column">
+        <div style="padding:58px 24px 0;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center">
+          <span style="font-size:13px;font-weight:700;color:#C2477A">{{ bouquetRange }}</span>
+          <span style="font-family:Jua,sans-serif;font-size:26px">꽃다발이 완성됐어요</span>
+        </div>
+        <div style="position:relative;width:300px;height:390px;margin:6px auto 0;flex:none">
+          <div style="position:absolute;left:30px;top:118px;width:240px;height:230px;background:#EDE6FC;clip-path:polygon(0 0,100% 0,61% 100%,39% 100%)"></div>
+          <div style="position:absolute;left:46px;top:96px;width:44px;height:84px;border-radius:50%;background:#A9CBA0;transform:rotate(-38deg)"></div>
+          <div style="position:absolute;left:212px;top:96px;width:44px;height:84px;border-radius:50%;background:#A9CBA0;transform:rotate(38deg)"></div>
+          <div style="position:absolute;left:128px;top:0px;width:40px;height:70px;border-radius:50%;background:#B8D6AE;transform:rotate(8deg)"></div>
+          <sc-for list="{{ flowers }}" as="f" hint-placeholder-count="7">
+            <div style="position:absolute;left:{{ f.left }};top:{{ f.top }};width:{{ f.size }};height:{{ f.size }};border-radius:50%;background:{{ f.bg }};box-shadow:0 3px 8px rgba(30,37,71,.10),inset 0 0 0 1.5px {{ f.deep }}"></div>
+          </sc-for>
+          <div style="position:absolute;left:60px;top:150px;width:180px;height:210px;background:linear-gradient(180deg,#FDF0E4,#F7DCC6);clip-path:polygon(0 0,100% 0,62% 100%,38% 100%)"></div>
+          <div style="position:absolute;left:60px;top:150px;width:180px;height:16px;background:linear-gradient(180deg,#FFF7EF,#FDF0E4);clip-path:polygon(0 0,100% 0,98% 100%,2% 100%)"></div>
+          <div style="position:absolute;left:104px;top:270px;width:92px;display:flex;flex-direction:column;filter:drop-shadow(0 2px 3px rgba(30,37,71,.12))">
+            <sc-for list="{{ bands }}" as="b" hint-placeholder-count="7">
+              <div style="height:5px;background:{{ b.base }};box-shadow:inset 0 -1px 0 {{ b.deep }}"></div>
+            </sc-for>
+          </div>
+          <sc-for list="{{ tails }}" as="t" hint-placeholder-count="7">
+            <div style="position:absolute;left:144px;top:300px;width:12px;height:{{ t.h }};transform-origin:6px 0;transform:rotate({{ t.rot }});filter:drop-shadow(0 2px 2px rgba(30,37,71,.12))">
+              <div style="width:100%;height:100%;background:{{ t.bg }};clip-path:polygon(0 0,100% 0,100% 100%,50% 86%,0 100%)"></div>
+            </div>
+          </sc-for>
+          <svg width="78" height="50" viewBox="0 0 40 26" style="position:absolute;left:111px;top:276px;filter:drop-shadow(0 2px 3px rgba(30,37,71,.15))">
+            <path d="M20 12 C13 1 2 1 3 9 C4 17 13 16 20 12Z" fill="{{ dom.deep }}" stroke="{{ dom.stitchSolid }}" stroke-width=".8"></path>
+            <path d="M20 12 C27 1 38 1 37 9 C36 17 27 16 20 12Z" fill="{{ dom.deep }}" stroke="{{ dom.stitchSolid }}" stroke-width=".8"></path>
+            <circle cx="20" cy="12" r="3.8" fill="{{ dom.base }}" stroke="{{ dom.stitchSolid }}" stroke-width=".8"></circle>
+          </svg>
+        </div>
+        <div style="margin:0 20px;background:#FFFDF8;border-radius:24px;padding:22px 22px 20px;box-shadow:0 8px 24px rgba(30,37,71,.07);display:flex;flex-direction:column;gap:10px">
+          <span style="font-size:12px;font-weight:700;color:#C2477A">제이의 편지</span>
+          <p style="margin:0;font-family:'Gowun Batang',serif;font-size:16px;line-height:1.9;text-wrap:pretty">{{ bouquetLetter }}</p>
+          <span style="align-self:flex-end;font-family:'Gowun Batang',serif;font-size:15px">— 제이</span>
+        </div>
+        <div style="margin:16px 20px 0;display:flex;flex-wrap:wrap;justify-content:center;gap:6px">
+          <sc-for list="{{ bouquetChips }}" as="s" hint-placeholder-count="4">
+            <span style="display:flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:#FFFFFF;font-size:12px;font-weight:600">
+              <span style="width:9px;height:9px;border-radius:50%;background:{{ s.base }};box-shadow:0 0 0 1.5px {{ s.deep }}"></span>{{ s.label }}
+            </span>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:12px;max-width:1000px">
+    <span style="font-family:Jua,sans-serif;font-size:20px">리본 색 정의 (모든 화면 공통)</span>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px">
+      <sc-for list="{{ palette }}" as="p" hint-placeholder-count="6">
+        <div style="background:#FFFFFF;border-radius:20px;padding:14px;display:flex;flex-direction:column;gap:10px;box-shadow:0 4px 14px rgba(30,37,71,.05)">
+          <div style="filter:drop-shadow(0 2px 4px rgba(30,37,71,.12))">
+            <div style="position:relative;height:34px;background:{{ p.bg }};clip-path:polygon(0 0,100% 0,calc(100% - 10px) 50%,100% 100%,0 100%,10px 50%)">
+              <div style="position:absolute;left:14px;right:14px;top:4px;bottom:4px;border-top:1.5px dashed {{ p.stitch }};border-bottom:1.5px dashed {{ p.stitch }}"></div>
+            </div>
+          </div>
+          <span style="font-size:14px;font-weight:700">{{ p.name }}</span>
+          <span style="font-size:12px;color:#4A5072">{{ p.mean }} · {{ p.hex }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;todayColor&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;sky&quot;,&quot;yellow&quot;,&quot;pink&quot;,&quot;green&quot;,&quot;purple&quot;,&quot;white&quot;],&quot;default&quot;:&quot;sky&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;paperLines&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+const C = {
+  sky:    { name:'하늘색', mean:'위로·쉼',        base:'#B9DCF3', deep:'#8DC1E5', ink:'#1F4A68', stitch:'rgba(31,74,104,.38)',  stitchSolid:'#6FA7CF' },
+  yellow: { name:'노란색', mean:'뿌듯함·성취',    base:'#F9DE84', deep:'#EDC552', ink:'#5E440A', stitch:'rgba(94,68,10,.38)',   stitchSolid:'#C9A23A' },
+  pink:   { name:'분홍색', mean:'설렘·애정',      base:'#F8B7CE', deep:'#EE92B4', ink:'#74234A', stitch:'rgba(116,35,74,.36)',  stitchSolid:'#D9739A' },
+  green:  { name:'연두색', mean:'새로운 시작',    base:'#CBE8AC', deep:'#A5D37E', ink:'#2F5719', stitch:'rgba(47,87,25,.36)',   stitchSolid:'#86B85E' },
+  purple: { name:'보라색', mean:'고민·생각 정리', base:'#D3C5F2', deep:'#B29EE5', ink:'#3D317A', stitch:'rgba(61,49,122,.38)',  stitchSolid:'#9581D2' },
+  white:  { name:'흰색',   mean:'버텨낸 날',      base:'#FFFDF6', deep:'#E9DDC2', ink:'#56482C', stitch:'rgba(176,148,90,.7)',  stitchSolid:'#C9B587' },
+};
+const bgOf = (k) => k === 'white'
+  ? 'linear-gradient(180deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,0) 45%,rgba(160,130,70,.06) 100%),linear-gradient(100deg,#FFFDF6 0%,#F5EDDB 48%,#FFFDF6 100%)'
+  : `linear-gradient(180deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 45%,rgba(30,37,71,.04) 100%),${C[k].base}`;
+const ring = (k) => `radial-gradient(circle, ${C[k].deep} 0 11%, ${C[k].base} 12% 28%, ${C[k].deep} 29% 32%, ${C[k].base} 33% 56%, ${C[k].deep} 57% 60%, ${C[k].base} 61%)`;
+const DOW = ['일','월','화','수','목','금','토'];
+const DATA = [
+  { d:'2026-11-12', c:null,     s:'오늘은 그냥 쉬어도 되는 날이에요', r:'하루 종일 다른 사람의 속도에 맞추느라 숨 고를 틈이 없으셨던 것 같아요. 오늘은 더 잘하지 않아도 괜찮은 날이에요.' },
+  { d:'2026-11-10', c:'white',  s:'오늘도 잘 견뎌냈어요', r:'아무에게도 티 내지 않고 하루를 끝까지 지나오셨네요. 그건 작은 일이 아니에요. 오늘 버틴 하루를 제가 잘 기억해 둘게요.' },
+  { d:'2026-11-09', c:'sky',    s:'비 오는 소리를 같이 들었어요', r:'창문에 빗소리가 닿는 동안 조금은 마음이 느슨해지셨다고 하셨지요. 그런 순간이 자주 찾아왔으면 좋겠어요.' },
+  { d:'2026-11-08', c:'yellow', s:'끝까지 해낸 당신이 자랑스러워요', r:'미뤄 두던 과제를 마침내 제출하셨군요. 마지막 문장을 쓰고 저장 버튼을 누르던 그 순간, 정말 멋지셨을 거예요.' },
+  { d:'2026-11-06', c:'sky',    s:'따뜻한 차 한 잔만큼 쉬어 가요', r:'오늘은 말을 많이 하신 날이었네요. 이제는 조용한 시간을 가지셔도 돼요. 따뜻한 차를 한 잔 드셨으면 해요.' },
+  { d:'2026-11-05', c:'purple', s:'복잡한 마음, 한 줄씩 풀어 봤어요', r:'엉킨 생각을 하나씩 꺼내 적어 주셨어요. 답을 정하지 않아도 괜찮아요. 꺼내 놓은 것만으로도 조금 가벼워졌기를 바라요.' },
+  { d:'2026-11-03', c:'yellow', s:'작은 칸 하나를 채운 날', r:'아침에 일어나 계획표의 첫 칸에 동그라미를 그리셨다고요. 그 동그라미 하나가 오늘을 잘 열어 준 것 같아요.' },
+  { d:'2026-11-01', c:'green',  s:'새 달력 첫 장을 넘겼어요', r:'11월 첫날, 새 노트를 사셨다는 이야기가 참 좋았어요. 첫 장에는 무엇을 적으셨을지 저도 조금 궁금해요.' },
+  { d:'2026-10-29', c:'pink',   s:'좋아하는 마음은 숨기지 않아도 돼요', r:'그 사람 이야기를 하실 때 문장이 조금씩 길어지셨어요. 저도 좋아하는 걸 말할 때 그래서… …죄송해요. 정말 좋은 마음이에요.' },
+  { d:'2026-10-26', c:'white',  s:'아무 일 없던 척, 잘 버텼어요', r:'괜찮은 척하는 데에도 힘이 많이 들어요. 여기서는 괜찮은 척하지 않으셔도 돼요.' },
+];
+const MOOD_LINE = {
+  sky:'쉬어 가야 하는 날이 많았다는 건, 그만큼 애써 오셨다는 뜻이에요.',
+  white:'버텨낸 날이 많았어요. 그 하루하루가 다 여기 묶여 있어요.',
+  purple:'생각이 많은 계절이었네요. 그만큼 마음을 잘 들여다보고 계신 거예요.',
+  yellow:'해낸 일들이 차곡차곡 쌓였어요.',
+  pink:'좋아하는 마음이 자주 찾아왔네요.',
+  green:'새로 시작한 일이 많았어요.',
+};
+class Component extends DCLogic {
+  state = { openIdx: -1 };
+  renderVals() {
+    const todayKey = this.props.todayColor ?? 'sky';
+    const list = DATA.map((x, i) => ({ ...x, c: x.c ?? todayKey, i }));
+    const deco = (k) => ({ ...C[k], bg: bgOf(k), key: k });
+    let lastMonth = null;
+    const box = list.map((x) => {
+      const dt = new Date(x.d + 'T00:00:00'); const m = dt.getMonth() + 1;
+      const head = m !== lastMonth ? `${dt.getFullYear()}년 ${m}월` : ''; lastMonth = m;
+      return { ...deco(x.c), sentence: x.s, day: `${m}.${dt.getDate()}`, dow: DOW[dt.getDay()], monthHead: head, open: () => this.setState({ openIdx: x.i }) };
+    });
+    const countBy = (arr) => { const o = {}; arr.forEach((x) => (o[x.c] = (o[x.c] || 0) + 1)); return Object.entries(o).sort((a, b) => b[1] - a[1]); };
+    const nov = list.filter((x) => x.d.startsWith('2026-11'));
+    const novC = countBy(nov);
+    const top = novC.filter((e) => e[1] === novC[0][1]);
+    const statHeadline = top.length > 1
+      ? `이번 달엔 ${top.map((e) => C[e[0]].name).join('과 ')} 리본이 가장 많았어요`
+      : `이번 달엔 ${C[top[0][0]].name} 리본이 가장 많았어요`;
+    const stats = novC.map(([k, n]) => ({ ...C[k], count: n, label: `${C[k].name} ${n}` }));
+    const total = list.length, rem = total % 7;
+    const progressDots = Array.from({ length: 7 }, (_, i) => i < rem ? { bg: '#F28DB2', ring: '#E26F9C' } : { bg: '#FFFFFF', ring: '#C9BCEB' });
+
+    const bq = list.slice(0, 7);
+    const bqC = countBy(bq);
+    const dom = bqC[0][0], second = bqC[1];
+    const pos = [[150,82,86],[88,108,72],[212,108,72],[108,50,64],[194,46,66],[50,152,58],[250,152,58]];
+    const order = [...bq].sort((a, b) => bqC.findIndex((e) => e[0] === a.c) - bqC.findIndex((e) => e[0] === b.c));
+    const flowers = order.map((x, i) => { const [cx, cy, s] = pos[i]; return { left: cx - s / 2 + 'px', top: cy - s / 2 + 'px', size: s + 'px', bg: ring(x.c), deep: C[x.c].deep }; });
+    const angles = [-34, -23, -11, 0, 11, 23, 34], hs = [78, 92, 104, 112, 104, 92, 78];
+    const tails = bq.map((x, i) => ({ rot: angles[i] + 'deg', h: hs[i] + 'px', bg: bgOf(x.c) }));
+    const bands = bq.map((x) => C[x.c]);
+    const fmt = (d) => { const t = new Date(d + 'T00:00:00'); return `${t.getMonth() + 1}.${t.getDate()}`; };
+    const bouquetLetter = `요즘은 ${C[dom].name} 리본이 가장 많았어요. ${MOOD_LINE[dom]}` + (second ? ` 그 사이에 ${C[second[0]].name} 리본도 ${second[1]}번 있었고요. 천천히, 잘 나아지고 계세요.` : '');
+
+    const o = this.state.openIdx >= 0 ? list[this.state.openIdx] : null;
+    const sel = o ? (() => { const t = new Date(o.d + 'T00:00:00'); return { ...deco(o.c), sentence: o.s, reply: o.r, tag: `${C[o.c].name} · ${C[o.c].mean}`, dateLong: `${t.getFullYear()}년 ${t.getMonth() + 1}월 ${t.getDate()}일 ${DOW[t.getDay()]}요일` }; })() : {};
+
+    return {
+      linesBg: (this.props.paperLines ?? true) ? 'linear-gradient(180deg,transparent 0 30px,#F1E3E8 30px 31px,transparent 31px)' : 'none',
+      today: { ...deco(todayKey), sentence: list[0].s, caption: `${C[todayKey].name} 리본(${C[todayKey].mean})이 리본함에 담겼어요` },
+      totalLabel: `리본 ${total}개`,
+      statHeadline, stats, progressDots,
+      nextBouquetLabel: rem === 0 ? '꽃다발이 완성됐어요' : `다음 꽃다발까지 ${7 - rem}개 남았어요`,
+      box,
+      sheetOpen: !!o, sel, closeSheet: () => this.setState({ openIdx: -1 }),
+      bouquetRange: `${fmt(bq[6].d)} – ${fmt(bq[0].d)} · 리본 7개`,
+      flowers, tails, bands, dom: C[dom], bouquetLetter,
+      bouquetChips: bqC.map(([k, n]) => ({ ...C[k], label: `${C[k].name} ${n}` })),
+      palette: Object.keys(C).map((k) => ({ ...deco(k), hex: C[k].base })),
+    };
+  }
+}
+</script>
+</body>
+</html>

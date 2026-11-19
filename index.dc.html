@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&display=swap">
+<script src="./image-slot.js"></script>
+<style>
+body{margin:0;background:#FFF5F8;color:#1E2547;font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#C2477A}a:hover{color:#1E2547}
+@keyframes jsway{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#FFF5F8;color:#1E2547;font-family:'Pretendard Variable',Pretendard,system-ui,sans-serif;line-height:1.65;word-break:keep-all">
+
+  <header style="position:sticky;top:0;z-index:10;background:rgba(255,245,248,.88);backdrop-filter:blur(10px);border-bottom:1px solid #F6DDE7">
+    <div style="max-width:1080px;margin:0 auto;padding:12px clamp(16px,4vw,32px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px">
+      <a href="index.dc.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1E2547">
+        <svg width="26" height="18" viewBox="0 0 26 18"><polygon points="0,1 12,9 0,17" fill="#F28DB2"></polygon><polygon points="26,1 14,9 26,17" fill="#F28DB2"></polygon><circle cx="13" cy="9" r="3.6" fill="#E26F9C"></circle></svg>
+        <span style="font-family:Jua,sans-serif;font-size:19px">제이의 들어주는 방</span>
+      </a>
+      <nav style="display:flex;align-items:center;gap:6px">
+        <a href="윤제이 리본함.dc.html" style="display:flex;align-items:center;padding:9px 14px;border-radius:999px;color:#1E2547;text-decoration:none;font-size:14px;font-weight:600" style-hover="background:#FFFFFF">나의 리본함</a>
+        <a href="윤제이 사연 남기기.dc.html" style="display:flex;align-items:center;padding:9px 16px;border-radius:999px;background:#1E2547;color:#FFF5F8;text-decoration:none;font-size:14px;font-weight:600">얘기 남기기</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" style="max-width:1080px;margin:0 auto;padding:0 clamp(16px,4vw,32px)">
+
+    <section data-screen-label="01 Hero" style="display:flex;flex-wrap:wrap-reverse;align-items:center;gap:clamp(28px,5vw,64px);padding:clamp(28px,6vw,72px) 0 clamp(48px,8vw,96px)">
+      <div style="flex:1 1 340px;display:flex;flex-direction:column;gap:20px">
+        <span style="align-self:flex-start;display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;background:#EDE6FC;color:#4B3E8C;font-size:13px;font-weight:600">
+          <svg width="16" height="11" viewBox="0 0 26 18"><polygon points="0,1 12,9 0,17" fill="#F28DB2"></polygon><polygon points="26,1 14,9 26,17" fill="#F28DB2"></polygon><circle cx="13" cy="9" r="3.6" fill="#E26F9C"></circle></svg>
+          조언 대신, 끝까지 들어드려요
+        </span>
+        <h1 style="margin:0;font-family:Jua,sans-serif;font-weight:400;font-size:clamp(34px,6.4vw,58px);line-height:1.22;letter-spacing:-.01em;text-wrap:balance">오늘 있었던 일,<br>말할 곳이 없었다면.</h1>
+        <p style="margin:0;font-size:clamp(17px,2.2vw,20px);color:#3B4166">제이가 10분, 끝까지 들어드립니다.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px">
+          <a href="윤제이 사연 남기기.dc.html" style="display:flex;align-items:center;gap:8px;padding:16px 28px;border-radius:999px;background:#F28DB2;color:#1E2547;text-decoration:none;font-weight:700;font-size:17px;box-shadow:0 8px 24px rgba(242,141,178,.38)" style-hover="background:#EE7AA5">오늘 얘기 남기기</a>
+          <a href="#how" style="display:flex;align-items:center;padding:16px 24px;border-radius:999px;background:#FFFFFF;color:#1E2547;text-decoration:none;font-weight:600;font-size:16px;box-shadow:0 2px 10px rgba(30,37,71,.06)">어떻게 하나요?</a>
+        </div>
+      </div>
+      <div style="flex:1 1 300px;max-width:460px;margin:0 auto;width:100%;position:relative">
+        <div style="position:absolute;inset:18px -14px -14px 18px;border-radius:32px;background:#FFE3D3"></div>
+        <sc-if value="{{ archPoster }}" hint-placeholder-val="{{ false }}">
+          <div style="position:relative;aspect-ratio:3/4;width:100%;box-shadow:0 18px 40px rgba(30,37,71,.12);border-radius:999px 999px 32px 32px;overflow:hidden">
+            <image-slot id="hero-poster-arch" shape="rect" placeholder="제이 포스터 이미지를 끌어다 놓으세요"></image-slot>
+          </div>
+        </sc-if>
+        <sc-if value="{{ roundPoster }}" hint-placeholder-val="{{ true }}">
+          <div style="position:relative;aspect-ratio:3/4;width:100%;box-shadow:0 18px 40px rgba(30,37,71,.12);border-radius:32px;overflow:hidden">
+            <image-slot id="hero-poster" shape="rect" placeholder="제이 포스터 이미지를 끌어다 놓으세요"></image-slot>
+          </div>
+        </sc-if>
+        <div style="position:absolute;top:-14px;right:22px;width:58px;height:40px;transform-origin:50% 50%;animation:jsway 4s ease-in-out infinite;pointer-events:none">
+          <svg width="58" height="40" viewBox="0 0 26 18"><polygon points="0,1 12,9 0,17" fill="#F28DB2"></polygon><polygon points="26,1 14,9 26,17" fill="#F28DB2"></polygon><circle cx="13" cy="9" r="3.6" fill="#E26F9C"></circle></svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" data-screen-label="02 About" style="padding:clamp(40px,7vw,80px) 0;display:flex;flex-direction:column;gap:28px">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;align-items:center;gap:8px;color:#C2477A;font-size:14px;font-weight:700;letter-spacing:.04em">
+          <svg width="20" height="14" viewBox="0 0 26 18"><polygon points="0,1 12,9 0,17" fill="#F28DB2"></polygon><polygon points="26,1 14,9 26,17" fill="#F28DB2"></polygon><circle cx="13" cy="9" r="3.6" fill="#E26F9C"></circle></svg>
+          제이 소개
+        </div>
+        <h2 style="margin:0;font-family:Jua,sans-serif;font-weight:400;font-size:clamp(26px,4vw,36px);line-height:1.3">들어주는 사람, 윤제이예요</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px">
+        <div style="background:#FFFFFF;border-radius:28px;padding:28px;box-shadow:0 6px 24px rgba(30,37,71,.06);display:flex;flex-direction:column;gap:18px">
+          <div style="display:flex;align-items:center;gap:16px">
+            <div style="width:84px;height:84px;flex:none;border-radius:50%;overflow:hidden;background:#EDE6FC">
+              <image-slot id="jay-avatar" shape="circle" placeholder="프로필"></image-slot>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:2px">
+              <span style="font-family:Jua,sans-serif;font-size:28px;line-height:1.2">윤제이</span>
+              <span style="font-size:14px;color:#4A5072">AI로 만든 가상 캐릭터 · 리본 수집가</span>
+            </div>
+          </div>
+          <p style="margin:0;font-size:16px;color:#2E3458;text-wrap:pretty">말수는 적지만 귀는 활짝 열려 있어요. 정중한 존댓말로, 들은 이야기를 차분하게 되짚어 드려요. 좋아하는 것 앞에서는 그만 말이 길어지곤 해요.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <span style="padding:6px 12px;border-radius:999px;background:#FFE8F0;font-size:13px;font-weight:600">정중한 존댓말</span>
+            <span style="padding:6px 12px;border-radius:999px;background:#EDE6FC;font-size:13px;font-weight:600">차분한 관찰</span>
+            <span style="padding:6px 12px;border-radius:999px;background:#FFE3D3;font-size:13px;font-weight:600">좋아하는 건 길게</span>
+          </div>
+          <a href="윤제이 리본함.dc.html" style="margin-top:auto;padding:16px 18px;border-radius:20px;background:#FFF5F8;border:1.5px dashed #F5B8CF;display:flex;flex-direction:column;gap:4px;text-decoration:none;color:#1E2547">
+            <span style="font-size:12px;font-weight:700;color:#C2477A;letter-spacing:.04em">제이의 리본 노트</span>
+            <span style="font-size:15px">오늘의 소소한 행복은 리본에 한 줄씩 적어 묶어 둬요. 받은 리본 보러 가기 ›</span>
+          </a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:18px">
+          <figure style="margin:0;background:#EDE6FC;border-radius:28px 28px 28px 8px;padding:24px 26px;display:flex;flex-direction:column;gap:10px">
+            <span style="font-size:12px;font-weight:700;color:#4B3E8C;letter-spacing:.04em">제이의 말투 ①</span>
+            <blockquote style="margin:0;font-size:17px;line-height:1.7;text-wrap:pretty">"오늘 하루, 여기까지 오신 것만으로도 충분히 애쓰셨어요. 천천히 말씀해 주세요. 저는 끝까지 듣고 있을게요."</blockquote>
+          </figure>
+          <figure style="margin:0;background:#FFE3D3;border-radius:28px 28px 28px 8px;padding:24px 26px;display:flex;flex-direction:column;gap:10px">
+            <span style="font-size:12px;font-weight:700;color:#9A4A26;letter-spacing:.04em">제이의 말투 ②</span>
+            <blockquote style="margin:0;font-size:17px;line-height:1.7;text-wrap:pretty">"퇴근길에 노을을 보셨군요. 저 노을 정말 좋아하거든요. 분홍이랑 보라가 섞이는 그 몇 분 동안은 하늘이 꼭 커다란 리본 같아서, 그걸 보고 있으면… …죄송해요. 말씀 계속해 주세요."</blockquote>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" data-screen-label="03 How" style="padding:clamp(40px,7vw,80px) 0;display:flex;flex-direction:column;gap:28px">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;align-items:center;gap:8px;color:#C2477A;font-size:14px;font-weight:700;letter-spacing:.04em">
+          <svg width="20" height="14" viewBox="0 0 26 18"><polygon points="0,1 12,9 0,17" fill="#F28DB2"></polygon><polygon points="26,1 14,9 26,17" fill="#F28DB2"></polygon><circle cx="13" cy="9" r="3.6" fill="#E26F9C"></circle></svg>
+          이용 방법
+        </div>
+        <h2 style="margin:0;font-family:Jua,sans-serif;font-weight:400;font-size:clamp(26px,4vw,36px);line-height:1.3">세 단계면 충분해요</h2>
+      </div>
+      <ol style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px">
+        <li style="background:#FFFFFF;border-radius:28px;padding:26px;box-shadow:0 6px 24px rgba(30,37,71,.06);display:flex;flex-direction:column;gap:12px">
+          <span style="width:44px;height:44px;border-radius:50%;background:#FFE8F0;display:flex;align-items:center;justify-content:center;font-family:Jua,sans-serif;font-size:22px;color:#C2477A">1</span>
+          <h3 style="margin:0;font-size:19px;font-weight:700">오늘 있었던 일 적기</h3>
+          <p style="margin:0;font-size:15px;color:#4A5072;text-wrap:pretty">잘 정리하지 않아도 괜찮아요. 떠오르는 대로 편하게 적어 주세요.</p>
+        </li>
+        <li style="background:#FFFFFF;border-radius:28px;padding:26px;box-shadow:0 6px 24px rgba(30,37,71,.06);display:flex;flex-direction:column;gap:12px">
+          <span style="width:44px;height:44px;border-radius:50%;background:#EDE6FC;display:flex;align-items:center;justify-content:center;font-family:Jua,sans-serif;font-size:22px;color:#4B3E8C">2</span>
+          <h3 style="margin:0;font-size:19px;font-weight:700">제이가 끝까지 읽고 들어주기</h3>
+          <p style="margin:0;font-size:15px;color:#4A5072;text-wrap:pretty">중간에 끊거나 판단하지 않아요. 마지막 문장까지 천천히 읽어요.</p>
+        </li>
+        <li style="background:#FFFFFF;border-radius:28px;padding:26px;box-shadow:0 6px 24px rgba(30,37,71,.06);display:flex;flex-direction:column;gap:12px">
+          <span style="width:44px;height:44px;border-radius:50%;background:#FFE3D3;display:flex;align-items:center;justify-content:center;font-family:Jua,sans-serif;font-size:22px;color:#9A4A26">3</span>
+          <h3 style="margin:0;font-size:19px;font-weight:700">위로와 공감의 말 + 리본 한 줄 받기</h3>
+          <p style="margin:0;font-size:15px;color:#4A5072;text-wrap:pretty">제이의 답장과 함께 오늘 이야기에 어울리는 색의 리본을 받아요. 리본은 나의 리본함에 모여요.</p>
+        </li>
+      </ol>
+      <a href="윤제이 사연 남기기.dc.html" style="align-self:center;display:flex;align-items:center;padding:16px 32px;border-radius:999px;background:#F28DB2;color:#1E2547;text-decoration:none;font-weight:700;font-size:17px;box-shadow:0 8px 24px rgba(242,141,178,.38)" style-hover="background:#EE7AA5">오늘 얘기 남기러 가기</a>
+    </section>
+
+    <section id="notice" data-screen-label="04 Notice" style="padding:clamp(40px,7vw,80px) 0;display:flex;flex-direction:column;gap:28px">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;align-items:center;gap:8px;color:#C2477A;font-size:14px;font-weight:700;letter-spacing:.04em">
+          <svg width="20" height="14" viewBox="0 0 26 18"><polygon points="0,1 12,9 0,17" fill="#F28DB2"></polygon><polygon points="26,1 14,9 26,17" fill="#F28DB2"></polygon><circle cx="13" cy="9" r="3.6" fill="#E26F9C"></circle></svg>
+          꼭 알아 주세요
+        </div>
+        <h2 style="margin:0;font-family:Jua,sans-serif;font-weight:400;font-size:clamp(26px,4vw,36px);line-height:1.3">여기는 전문 상담이 아니에요</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px">
+        <div style="background:#EDE6FC;border-radius:28px;padding:28px;display:flex;flex-direction:column;gap:12px">
+          <p style="margin:0;font-size:16px;line-height:1.75;text-wrap:pretty">윤제이는 AI로 만든 가상 캐릭터예요. 이야기를 들어드릴 수는 있지만, 의료·심리 전문 상담이나 진단, 치료를 대신할 수 없어요.</p>
+          <p style="margin:0;font-size:16px;line-height:1.75;text-wrap:pretty">마음이 많이 힘들거나 스스로를 해치고 싶은 생각이 든다면, 혼자 견디지 말고 꼭 전문 창구에 연락해 주세요.</p>
+        </div>
+        <div style="background:#FFFFFF;border-radius:28px;padding:28px;box-shadow:0 6px 24px rgba(30,37,71,.06);display:flex;flex-direction:column;gap:14px">
+          <span style="font-size:15px;font-weight:700">힘들 때 도움받을 수 있는 공식 창구</span>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px">
+            <li style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;padding:12px 16px;border-radius:20px;background:#FFF5F8">
+              <span style="font-size:15px">정신건강위기상담전화</span>
+              <span style="padding:5px 14px;border-radius:999px;background:#FFE8F0;font-size:14px;font-weight:700">☎ 1577-0199</span>
+            </li>
+            <li style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;padding:12px 16px;border-radius:20px;background:#FFF5F8">
+              <span style="font-size:15px">자살예방상담전화</span>
+              <span style="padding:5px 14px;border-radius:999px;background:#FFE8F0;font-size:14px;font-weight:700">☎ 109</span>
+            </li>
+            <li style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;padding:12px 16px;border-radius:20px;background:#FFF5F8">
+              <span style="font-size:15px">생명의전화</span>
+              <span style="padding:5px 14px;border-radius:999px;background:#FFE8F0;font-size:14px;font-weight:700">☎ 1588-9191</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="fee" data-screen-label="05 Fee" style="padding:clamp(40px,7vw,80px) 0;display:flex;flex-direction:column;gap:28px">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;align-items:center;gap:8px;color:#C2477A;font-size:14px;font-weight:700;letter-spacing:.04em">
+          <svg width="20" height="14" viewBox="0 0 26 18"><polygon points="0,1 12,9 0,17" fill="#F28DB2"></polygon><polygon points="26,1 14,9 26,17" fill="#F28DB2"></polygon><circle cx="13" cy="9" r="3.6" fill="#E26F9C"></circle></svg>
+          이용료 안내
+        </div>
+        <h2 style="margin:0;font-family:Jua,sans-serif;font-weight:400;font-size:clamp(26px,4vw,36px);line-height:1.3">계좌이체로 이용료를 보내 주세요</h2>
+      </div>
+      <div style="max-width:720px;width:100%;background:#FFFFFF;border-radius:32px;padding:clamp(22px,4vw,36px);box-shadow:0 10px 32px rgba(30,37,71,.08);display:flex;flex-direction:column;gap:20px">
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px">
+          <span style="font-size:15px;font-weight:700">이용료</span>
+          <span style="font-family:Jua,sans-serif;font-size:clamp(28px,4.4vw,34px);color:#C2477A">3,000원</span>
+        </div>
+        <div style="background:#FFF5F8;border-radius:24px;padding:20px 22px;display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px">
+            <span style="font-size:14px;color:#4A5072">은행</span>
+            <span style="font-size:16px;font-weight:700">토스뱅크</span>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px">
+            <span style="font-size:14px;color:#4A5072">계좌번호</span>
+            <span style="font-size:18px;font-weight:700;letter-spacing:.02em;font-variant-numeric:tabular-nums">1001-5315-1710</span>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px">
+            <span style="font-size:14px;color:#4A5072">예금주</span>
+            <span style="font-size:16px;font-weight:700">ㅊㅈㅇ</span>
+          </div>
+        </div>
+        <button type="button" onClick="{{ copyAccount }}" style="font:inherit;font-size:16px;font-weight:700;height:52px;border:none;border-radius:999px;background:#F28DB2;color:#1E2547;cursor:pointer;box-shadow:0 8px 20px rgba(242,141,178,.32)" style-hover="background:#EE7AA5">{{ copyLabel }}</button>
+        <p style="margin:0;font-size:13px;color:#4A5072;text-align:center;text-wrap:pretty">입금자명에 사연 닉네임을 적어 주시면 확인이 쉬워요.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer data-screen-label="05 Footer" style="margin-top:clamp(24px,5vw,48px);background:#FFE8F0;border-radius:40px 40px 0 0">
+    <div style="max-width:1080px;margin:0 auto;padding:36px clamp(16px,4vw,32px) 44px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px">
+      <div style="display:flex;align-items:center;gap:8px">
+        <svg width="22" height="15" viewBox="0 0 26 18"><polygon points="0,1 12,9 0,17" fill="#F28DB2"></polygon><polygon points="26,1 14,9 26,17" fill="#F28DB2"></polygon><circle cx="13" cy="9" r="3.6" fill="#E26F9C"></circle></svg>
+        <span style="font-family:Jua,sans-serif;font-size:18px">제이의 들어주는 방</span>
+      </div>
+      <p style="margin:0;font-size:14px;color:#3B4166">캐릭터와 이미지는 AI로 생성했습니다. · 대학 수업 과제용 시안</p>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;posterFrame&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;rounded&quot;,&quot;arch&quot;],&quot;default&quot;:&quot;rounded&quot;,&quot;tsType&quot;:&quot;'rounded'|'arch'&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const arch = (this.props.posterFrame ?? 'rounded') === 'arch';
+    const copyAccount = () => {
+      const t = '토스뱅크 1001-5315-1710';
+      const done = () => { this.setState({ copied: true }); clearTimeout(this.ct); this.ct = setTimeout(() => this.setState({ copied: false }), 2000); };
+      try { navigator.clipboard.writeText(t).then(done, () => { this.fallback(t); done(); }); } catch (_) { this.fallback(t); done(); }
+    };
+    return { archPoster: arch, roundPoster: !arch, copyAccount, copyLabel: this.state?.copied ? '복사했어요' : '계좌번호 복사하기' };
+  }
+  fallback(t) {
+    const a = document.createElement('textarea'); a.value = t; document.body.appendChild(a); a.select();
+    try { document.execCommand('copy'); } catch (_) {} a.remove();
+  }
+}
+</script>
+</body>
+</html>
